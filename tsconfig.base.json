@@ -1,13 +1,9 @@
 {
   "compilerOptions": {
-    "allowJs": true,
     "alwaysStrict": true,
-    "checkJs": true,
-    "composite": true,
     "declaration": true,
     "declarationMap": true,
     "esModuleInterop": true,
-    "incremental": true,
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "noFallthroughCasesInSwitch": true,

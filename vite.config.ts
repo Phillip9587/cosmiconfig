@@ -6,11 +6,11 @@ const vitestConfig = defineConfig({
     environment: 'node',
     restoreMocks: true,
     mockReset: true,
-    includeSource: ['src/**/*.{js,ts}'],
+    includeSource: ['packages/**/src/**/*.{js,ts}'],
     coverage: {
       provider: 'istanbul',
       reporter: ['text', 'html', 'lcov'],
-      include: ['src/**/*.{js,ts}'],
+      include: ['packages/**/src/**/*.{js,ts}'],
       branches: 100,
       functions: 100,
       lines: 100,

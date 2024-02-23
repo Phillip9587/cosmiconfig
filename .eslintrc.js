@@ -8,8 +8,10 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     sourceType: 'module',
-    project: './tsconfig.base.json',
+    project: 'packages/*/tsconfig.json',
+    tsconfigRootDir: __dirname,
   },
+  ignorePatterns: ["packages/**/coverage", "packages/**/dist", "packages/**/vitest.config.ts"],
   extends: [
     'eslint-config-davidtheclark-node',
     'plugin:@typescript-eslint/eslint-recommended',

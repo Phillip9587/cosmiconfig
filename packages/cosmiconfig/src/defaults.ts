@@ -1,11 +1,5 @@
-import {
-  loadJs,
-  loadJson,
-  loadJsSync,
-  loadTs,
-  loadTsSync,
-  loadYaml,
-} from './loaders';
+import { loadJs, loadJsSync } from '@cosmiconfig/core';
+import { loadJson, loadTs, loadTsSync, loadYaml } from './loaders';
 
 export function getDefaultSearchPlaces(moduleName: string): Array<string> {
   return [
@@ -56,7 +50,7 @@ export function getDefaultSearchPlacesSync(moduleName: string): Array<string> {
   ];
 }
 
-export const globalConfigSearchPlaces = [
+export const defaultGlobalConfigSearchPlaces = [
   'config',
   'config.json',
   'config.yaml',
@@ -66,7 +60,7 @@ export const globalConfigSearchPlaces = [
   'config.cjs',
   'config.mjs',
 ];
-export const globalConfigSearchPlacesSync = [
+export const defaultGlobalConfigSearchPlacesSync = [
   'config',
   'config.json',
   'config.yaml',
@@ -77,7 +71,7 @@ export const globalConfigSearchPlacesSync = [
 ];
 
 // this needs to be hardcoded, as this is intended for end users, who can't supply options at this point
-export const metaSearchPlaces = [
+export const defaultMetaSearchPlaces = [
   'package.json',
   'package.yaml',
   '.config/config.json',
@@ -87,6 +81,17 @@ export const metaSearchPlaces = [
   '.config/config.ts',
   '.config/config.cjs',
   '.config/config.mjs',
+];
+
+export const defaultMetaSearchPlacesSync = [
+  'package.json',
+  'package.yaml',
+  '.config/config.json',
+  '.config/config.yaml',
+  '.config/config.yml',
+  '.config/config.js',
+  '.config/config.ts',
+  '.config/config.cjs',
 ];
 
 // do not allow mutation of default loaders. Make sure it is set inside options
